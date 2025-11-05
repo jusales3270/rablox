@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Photo Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  .font-logo {
+    font-family: 'Cinzel Decorative', serif;
+  }
+  
+  @keyframes zoomInBehindLeft {
+    0% {
+      opacity: 0;
+      transform: scale(0) translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(-8deg);
+    }
+  }
+
+  @keyframes zoomInBehindRight {
+    0% {
+      opacity: 0;
+      transform: scale(0) translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(8deg);
+    }
+  }
+
+  .landing-image {
+    opacity: 0;
+  }
+
+  .animate-zoom-left {
+    animation: zoomInBehindLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-zoom-right {
+    animation: zoomInBehindRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+</style>
+</head>
+  <body class="bg-gray-950 text-gray-100">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
